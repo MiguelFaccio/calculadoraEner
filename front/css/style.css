@@ -58,6 +58,7 @@ main {
     border-radius: 8px;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
@@ -106,16 +107,33 @@ main {
     padding: 20px;
     border-radius: 8px;
     width: 300px;
-    height: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
+.modal-content input{
+    width: 280px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 10s, background-color 10s;
+}
 .modal-content {
     background-color: #FFF;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .close {
@@ -137,21 +155,56 @@ main {
     padding: 10px;
     border-radius: 8px;
 }
-form.formuTarifa input{
-    border: 0;
-    height: 20px;
-    width: 200px;
-    border-radius: 4px;
-}
+
+
 form.formuTarifa button  {
-    height: 25px;
+    height: 70px;
+    height: 35px;
     background-color: #FF4C4C;
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 10px;
 }
 form.formuTarifa button :hover {
     background-color: #E63939;
+}
+
+
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    
+    border-radius: 8px;
+    background-color: #f9f9f9;
+ 
+    cursor: pointer;
+    transition: border-color 10s, background-color 0.3s;
+}
+
+select:focus {
+    border-color: #3D8A8B;
+    background-color: #cef0f2;
+    outline: none;
+}
+
+
+/* Estilo do container para alinhar a seta com o select */
+.formuTarifa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

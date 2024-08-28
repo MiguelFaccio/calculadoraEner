@@ -15,16 +15,45 @@
     </nav>
     <main>
         <div class="calculo">
+            <form id="formTarifa" class="formuTarifa">
+            <label for="tarifa">Tarifa Energética:</label>
+            <select class="tarifa" id="tarifa" name="tarifa">
+              <option value="0.962">PA - Pará (R$ 0,962/kWh)</option>
+              <option value="0.883">MT - Mato Grosso (R$ 0,883/kWh)</option>
+              <option value="0.880">MS - Mato Grosso do Sul (R$ 0,880/kWh)</option>
+              <option value="0.866">AL - Alagoas (R$ 0,866/kWh)</option>
+              <option value="0.854">PI - Piauí (R$ 0,854/kWh)</option>
+              <option value="0.840">RJ - Rio de Janeiro (R$ 0,840/kWh)</option>
+              <option value="0.835">AM - Amazonas (R$ 0,835/kWh)</option>
+              <option value="0.828">AC - Acre (R$ 0,828/kWh)</option>
+              <option value="0.808">BA - Bahia (R$ 0,808/kWh)</option>
+              <option value="0.766">DF - Distrito Federal (R$ 0,766/kWh)</option>
+              <option value="0.764">PE - Pernambuco (R$ 0,764/kWh)</option>
+              <option value="0.756">TO - Tocantins (R$ 0,756/kWh)</option>
+              <option value="0.751">MG - Minas Gerais (R$ 0,751/kWh)</option>
+              <option value="0.744">CE - Ceará (R$ 0,744/kWh)</option>
+              <option value="0.735">RR - Roraima (R$ 0,735/kWh)</option>
+              <option value="0.719">MA - Maranhão (R$ 0,719/kWh)</option>
+              <option value="0.709">RO - Rondônia (R$ 0,709/kWh)</option>
+              <option value="0.711">GO - Goiás (R$ 0,711/kWh)</option>
+              <option value="0.696">ES - Espírito Santo (R$ 0,696/kWh)</option>
+              <option value="0.691">RS - Rio Grande do Sul (R$ 0,691/kWh)</option>
+              <option value="0.689">RN - Rio Grande do Norte (R$ 0,689/kWh)</option>
+              <option value="0.680">SP - São Paulo (R$ 0,680/kWh)</option>
+              <option value="0.651">SE - Sergipe (R$ 0,651/kWh)</option>
+              <option value="0.639">PR - Paraná (R$ 0,639/kWh)</option>
+              <option value="0.602">PB - Paraíba (R$ 0,602/kWh)</option>
+              <option value="0.593">SC - Santa Catarina (R$ 0,593/kWh)</option>
+          </select>
+            <button type="button" onclick="tarifaEnergetica()">Adicionar</button>
+        </form>
             <canvas id="graficoConsumo"></canvas>
             <div id="resultado"></div>
+            
+            
+            <canvas id="graficoCM"></canvas>
+            <div id="resultadoM"></div>
             <button id="salvar" class="save-button">Salvar</button>
-            <form id="formTarifa" class="formuTarifa">
-                <label for="tarifa">Tarifa Energética:</label>
-                <input type="number" id="tarifa" name="tarifa" placeholder="exemplo de SP: R$0,70" required>
-                <button type="button" onclick="tarifaEnergetica()">Adicionar</button>
-            </form>
-            <canvas id="graficoConsumoMensal"></canvas>
-            <div id="resultadoMensal"></div>
         </div>
         <div class="room">
           <button class="objeto" onclick="abrirModal('TV')">
@@ -44,6 +73,15 @@
           </button>
           <button class="objeto" onclick="abrirModal('Video Game')">
             <img src="../icons/videogame.png" alt="Video Game" /> Video Game
+          </button>
+          <button class="objeto" onclick="abrirModal('Chuveiro')">
+            <img src="../icons/chuveiro.png" alt="Chuveiro" /> Chuveiro
+          </button>
+          <button class="objeto" onclick="abrirModal('geladeira')">
+            <img src="../icons/geladeira.png" alt="Geladeira" /> Geladeira
+          </button>
+          <button class="objeto" onclick="abrirModal('liquidificador')">
+            <img src="../icons/liquidificador.png" alt="Liquidificador" /> Liquidificador
           </button>
         </div>
     </main>
