@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc Eletrica</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+</head>
+<body>
+    <nav>
+        Navegação 
+        <button id="trocar-comodo" class="nav-button">Trocar Cômodo</button> 
+        <button id="logout-button" class="nav-button">Logout</button> 
+    </nav>
+    <main>
+        <div class="calculo">
+            <canvas id="graficoConsumo"></canvas>
+            <div id="resultado"></div>
+            <button id="salvar" class="save-button">Salvar</button>
+            <form id="formTarifa" class="formuTarifa">
+                <label for="tarifa">Tarifa Energética:</label>
+                <input type="number" id="tarifa" name="tarifa" placeholder="exemplo de SP: R$0,70" required>
+                <button type="button" onclick="tarifaEnergetica()">Adicionar</button>
+            </form>
+            <canvas id="graficoConsumoMensal"></canvas>
+            <div id="resultadoMensal"></div>
+        </div>
+        <div class="room">
+          <button class="objeto" onclick="abrirModal('TV')">
+            <img src="../icons/tv.png" alt="TV" /> TV
+          </button>
+          <button class="objeto" onclick="abrirModal('Ar Condicionado')">
+            <img src="../icons/ar.png" alt="Ar Condicionado" /> Ar Condicionado
+          </button>
+          <button class="objeto" onclick="abrirModal('Ventilador')">
+            <img src="../icons/ventilador.png" alt="Ventilador" /> Ventilador
+          </button>
+          <button class="objeto" onclick="abrirModal('Lâmpada')">
+            <img src="../icons/lampada.png" alt="Lâmpada" /> Lâmpada
+          </button>
+          <button class="objeto" onclick="abrirModal('Computador')">
+            <img src="../icons/computador.png" alt="Computador" /> Computador
+          </button>
+          <button class="objeto" onclick="abrirModal('Video Game')">
+            <img src="../icons/videogame.png" alt="Video Game" /> Video Game
+          </button>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Adicionar <span id="modal-title"></span></h2>
+            <form id="formObjeto">
+                <label for="potencia">Potência (W):</label>
+                <input type="number" id="potencia" name="potencia" required>
+                <label for="tempo">Tempo de uso (horas/dia):</label>
+                <input type="number" id="tempo" name="tempo" required>
+                <button type="button" onclick="adicionarObjeto()">Adicionar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.getElementById('logout-button').addEventListener('click', function() {
+    // Aqui você pode adicionar a lógica para o logout, como limpar sessões, tokens, etc.
+
+    // Redireciona para a página de login
+    window.location.href = "login.html";  // Certifique-se que o caminho esteja correto
+});
+
+</script>
+</html>
+
+
+
